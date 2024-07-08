@@ -1,0 +1,41 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+body{
+    max-width: 1366px;
+    max-height: 633px;
+    font: normal 1em arial;
+    background-color: rgb(102, 102, 252);
+}
+header{
+    width: 90vw;
+    height: 120px;
+    margin: auto;
+    text-align: center;
+}
+header h1{
+    color: white;
+    line-height: 100px;
+    text-align: center;
+}
+section{
+    border: 1px solid white;
+    max-width: 600px;
+    margin: auto;
+    background-color: white;
+    border-radius: 20px;
+}
+div{
+    text-align: center;
+    padding: 10px;
+    font-size: 1.2em;
+}
+footer{
+    width: 90vw;
+    margin: auto;
+    text-align: center;
+    font-style: italic;
+    padding: 20px;
+    color: white;
+}

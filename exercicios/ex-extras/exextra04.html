@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Par ou impar</title>
+</head>
+<body>
+    <div id="res"></div>
+
+    <script>
+        var num = window.prompt('Escolha um número: ')
+        var resultado = document.getElementById('res')
+        if (num%2 == 0){
+            resultado.innerHTML = `<p>Você escolheu o número ${num}, ele é <strong>par</strong>.</p>`
+        } else{
+            resultado.innerHTML = `<p>Você escolheu o número ${num}, ele é <strong>ímpar</strong>.</p>`
+        }
+    </script>
+</body>
+</html>

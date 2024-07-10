@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador de cliques</title>
+    <style>
+        input{
+            width: 200px;
+            height: 100px;
+            font-size: 1.2em;
+            border-radius: 10px;
+            border: none;
+        }
+        input:hover{
+            background-color: rgb(78, 78, 78);
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Contador de cliques</h1>
+    <input type="button" id="clique" value="Clique aqui" onclick="contar()">
+    <input type="button" id="zerar" value="Zerador de cliques" onclick="zerar()">
+    <div id="resultado">
+        <p>O contador está com 0 clique.</p>
+    </div>
+
+    <script>
+        var contador = 0
+        var res = document.getElementById('resultado')
+        function contar(){
+            contador++
+            res.innerHTML = `<p> O contador está com ${contador} cliques.</p>`
+            if (contador<=1){
+                res.innerHTML = `<p> O contador está com ${contador} clique. </p>`
+            } else {
+                res.innerHTML = `<p> O contador está com ${contador} cliques.</p>`
+            }
+        }
+        function zerar(){
+            contador = 0
+            res.innerHTML = `<p> O contador está com 0 clique. </p>`
+        }
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taxa Metabólica Basal</title>
+</head>
+<body>
+    <label for="naltura">Altura em cm:</label>
+    <input type="number" name="naltura" id="ialtura"><br>
+
+    <label for="npeso">Peso em kg:</label>
+    <input type="number" name="npeso" id="ipeso"><br>
+
+    <label for="nidade">Idade em anos</label>
+    <input type="number" name="nidade" id="idade">
+
+    <input type="button" value="Calcular" onclick="calcular()">
+
+    <div id="restmb"></div>
+
+    <script>
+        function calcular(){
+            var idade = Number(document.getElementById('idade').value)
+            var altura = Number(document.getElementById('ialtura').value)
+            var peso = Number(document.getElementById('ipeso').value)
+            var tmb = 88.362+(13.397*peso)+(4.799*altura)-(5.677*idade)
+            restmb.innerHTML = `${tmb}`
+        }
+    </script>
+</body>
+</html>

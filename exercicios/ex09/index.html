@@ -4,64 +4,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Taxa Metabólica Basal</title>
-    <style>
-        body{
-            margin: 10px 0;
-            padding: 0 10px;
-        }
-        main{
-            display: flex;
-            margin-bottom: 10px;
-        }
-        #form{
-            display: grid;
-            grid-template-columns: repeat(3, 100px);
-            gap: 5px;
-        }
-        input{
-            width: 100px;
-            border-radius: 5px;
-            border: 1px solid black;
-            margin-bottom: 10px;
-        }
-        #mas, #fem{
-            width: 20px;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <main>
-        <label for="sexo">Sexo:</label>
-        <input type="radio" name="sexo" id="mas">Masculino
-        <input type="radio" name="sexo" id="fem">Feminino
-    </main>
-    <div id="form">
-        <label for="naltura">Altura em cm:</label>
-        <input type="number" name="naltura" id="ialtura"><br>
-        <label for="npeso">Peso em kg:</label>
-        <input type="number" name="npeso" id="ipeso"><br>
-        <label for="nidade">Idade em anos</label>
-        <input type="number" name="nidade" id="idade">
-        <br>
-        <input type="button" value="Calcular" onclick="calcular()">
-        <br>
+    <header>
+        <h1>Saúde com Dr. Gustavo Pimentel</h1>
+    </header>
+    <section>
+        <div>
+            <h2>Veja também sua TMB</h2>
+            <h4>O que é TMB?</h4>
+            <p>A TMB é a taxa metabólica basal, que é a taxa que mede a quantidade de calorias que seu corpo usa apenas para se manter vivo. Basicamente o seu gasto mínimo calórico diário. Esse número ajuda as pessoas a fazerem dietas, seja ela para perder ou ganhar peso. Para ganhar peso se consome mais calorias que gasta num dia (superávit calórico), e para perder peso se consome menos calorias que se gasta no dia (défict calórico). Se pratica algum exercício durante o dia, tem que levar em conta as calorias gastas no exercício e adicionar à TMB para fazer o cálculo de superávit ou défict calórico.
+            </p>
+            <h4>Como é calculada a TMB?</h4>
+            <p>Lorena explica que a TMB pode ser calculada através de algumas fórmulas e calculadoras que as reproduzam, porém o que se encontra não é um cálculo preciso, mas uma estimativa. Para encontrar um valor mais próximo do exato, pode ser feito o exame de calorimetria, no qual se analisa a quantidade de gás carbônico exalada pelo paciente durante um período de tempo e, a partir dele, estimar a TMB daquele indivíduo de forma mais precisa.
+            Taxa Metabólica Basal são calorias consumidas pelo organismo em funções vitais, como os batimentos cardíacos — Foto: Getty Images
+            Taxa Metabólica Basal são calorias consumidas pelo organismo em funções vitais, como os batimentos cardíacos;
+            <br>
+            Por tratar-se de uma estimativa e não de um cálculo preciso, a TMB pode ser calculada de diferentes maneiras, entre as quais estas são as mais comuns:
+            <br>
+            <ul>
+                <li>Fórmula Revisada de Harris-Benedict:
+                A versão original, publicada em 1919, foi revisada e atualizada por Roza e Shizgal, em 1984. Trata-se do mesmo método, porém com cálculos mais precisos e atualizados.
+                TMB (homens) = 88,362 + (13,397 x peso em kg) + (4,799 x altura em cm) - (5,677 x idade em anos). Exemplificando: um homem de 80 kg, 1,75m e 40 anos teria, portanto, por volta de: 88, 362 + (13,397 x 80) + (4,799 x 175) - (5,677 x 40). Ou seja, 88,362 + 1.071,76 + 839,825 - 227,08, que é igual a 1.772,867 calorias.
+                TMB (mulheres) = 447,593 + (9,247 x peso em kg) + (3,098 x altura em cm) - (4,330 x idade em anos)
+                <li>Fórmula de Mifflin-St Jeor:
+                TMB (homens) = (10 x peso em kg) + (6,25 x altura em cm) - (5 x idade em anos) + 5. O mesmo homem citado acima aqui apareceria com uma TMB de 2.088,75 calorias mínimas diárias para "funcionar" perfeitamente.
+                TMB (mulheres) = (10 x peso em kg) + (6,25 x altura em cm) - (5 x idade em anos) - 161
+                <li>Fórmula de Katch-McArdle: TMB = 370 + (21,6 x massa magra em kg)
+                <li>Fórmula de Owen: TMB = (0,879 x peso em kg) + (10,2 x altura em cm) - (5,23 x idade em anos) – 161
+                <li>Fórmula de Cunningham: TMB = 500 + (22 x massa magra em kg)
+            </ul>
+            </p>
+            <h4>Calcule sua TMB estimada:</h4>
+        </div>
         
-    </div>
-    <div id="restmb"></div>
-    <script>
-        function calcular(){
-            var idade = Number(document.getElementById('idade').value)
-            var altura = Number(document.getElementById('ialtura').value)
-            var peso = Number(document.getElementById('ipeso').value)
-            var sex = document.getElementsByName('sexo')
-            if(sex[0].checked){
-                var tmb = 88.362+(13.397*peso)+(4.799*altura)-(5.677*idade)
-                restmb.innerHTML = `${tmb.toFixed(2)}`
-            } else{
-                var tmb = 447.593 + (9.247*peso) + (3.098*altura) - (4.330*idade)
-                restmb.innerHTML = `${tmb.toFixed(2)}`
-            }
-        }
-    </script>
+    <form>
+        <div>
+            <label for="sexo">Sexo:</label>
+            <input type="radio" name="sexo" id="mas" required>Masculino
+            <input type="radio" name="sexo" id="fem">Feminino
+        </div>
+        <div id="form">
+            <label for="naltura">Altura em cm:</label>
+            <input type="number" name="naltura" id="ialtura" required><br>
+            <label for="npeso">Peso em kg:</label>
+            <input type="number" name="npeso" id="ipeso" required><br>
+            <label for="nidade">Idade em anos</label>
+            <input type="number" name="nidade" id="idade" required>
+            <br>
+            <input type="button" value="Calcular" onclick="calcular()">
+            <br>
+        
+        </div>
+        <div id="restmb"></div>
+    </form>
+</section>
+
+    <script src="script.js"></script>
 </body>
 </html>

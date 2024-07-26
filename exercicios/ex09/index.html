@@ -4,28 +4,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Taxa Metabólica Basal</title>
+    <style>
+        body{
+            margin: 10px 0;
+            padding: 0 10px;
+        }
+        main{
+            display: flex;
+            margin-bottom: 10px;
+        }
+        #form{
+            display: grid;
+            grid-template-columns: repeat(3, 100px);
+            gap: 5px;
+        }
+        input{
+            width: 100px;
+            border-radius: 5px;
+            border: 1px solid black;
+            margin-bottom: 10px;
+        }
+        #mas, #fem{
+            width: 20px;
+        }
+    </style>
 </head>
 <body>
-    <label for="naltura">Altura em cm:</label>
-    <input type="number" name="naltura" id="ialtura"><br>
-
-    <label for="npeso">Peso em kg:</label>
-    <input type="number" name="npeso" id="ipeso"><br>
-
-    <label for="nidade">Idade em anos</label>
-    <input type="number" name="nidade" id="idade">
-
-    <input type="button" value="Calcular" onclick="calcular()">
-
+    <main>
+        <label for="sexo">Sexo:</label>
+        <input type="radio" name="sexo" id="mas">Masculino
+        <input type="radio" name="sexo" id="fem">Feminino
+    </main>
+    <div id="form">
+        <label for="naltura">Altura em cm:</label>
+        <input type="number" name="naltura" id="ialtura"><br>
+        <label for="npeso">Peso em kg:</label>
+        <input type="number" name="npeso" id="ipeso"><br>
+        <label for="nidade">Idade em anos</label>
+        <input type="number" name="nidade" id="idade">
+        <br>
+        <input type="button" value="Calcular" onclick="calcular()">
+        <br>
+        
+    </div>
     <div id="restmb"></div>
-
     <script>
         function calcular(){
             var idade = Number(document.getElementById('idade').value)
             var altura = Number(document.getElementById('ialtura').value)
             var peso = Number(document.getElementById('ipeso').value)
-            var tmb = 88.362+(13.397*peso)+(4.799*altura)-(5.677*idade)
-            restmb.innerHTML = `${tmb}`
+            var sex = document.getElementsByName('sexo')
+            if(sex[0].checked){
+                var tmb = 88.362+(13.397*peso)+(4.799*altura)-(5.677*idade)
+                restmb.innerHTML = `${tmb.toFixed(2)}`
+            } else{
+                var tmb = 447.593 + (9.247*peso) + (3.098*altura) - (4.330*idade)
+                restmb.innerHTML = `${tmb.toFixed(2)}`
+            }
         }
     </script>
 </body>
